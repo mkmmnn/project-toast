@@ -5,19 +5,8 @@ import styles from "./ToastShelf.module.css";
 import { ToastContext } from "../ToastProvider";
 
 function ToastShelf() {
-  const { toasts, handleCloseToast, closeAll } = React.useContext(ToastContext);
-  React.useEffect(() => {
-    function handleKeyDown(event) {
-      if (event.code === "Escape") {
-        closeAll();
-      }
-    }
-    window.addEventListener("keydown", handleKeyDown);
+  const { toasts, handleCloseToast } = React.useContext(ToastContext);
 
-    return () => {
-      window.removeEventListener("keydown", closeAll);
-    };
-  }, [closeAll]);
   return (
     <ol
       role="region"
