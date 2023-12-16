@@ -16,9 +16,13 @@ const ToastProvider = ({ children }) => {
     setToasts(nextToasts);
   };
 
+  const closeAll = () => {
+    setToasts([]);
+  };
+
   return (
     <ToastContext.Provider
-      value={{ toasts, handleOpenToast, handleCloseToast }}
+      value={{ toasts, handleOpenToast, handleCloseToast, closeAll }}
     >
       {children}
     </ToastContext.Provider>
