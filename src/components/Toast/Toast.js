@@ -18,18 +18,11 @@ const ICONS_BY_VARIANT = {
   error: AlertOctagon,
 };
 
-const STYLES_BY_VARIANT = {
-  notice: styles.notice,
-  warning: styles.warning,
-  success: styles.success,
-  error: styles.error,
-};
-
 function Toast({ id, variant, closeToast, children }) {
   const Icon = ICONS_BY_VARIANT[variant];
 
   return (
-    <div className={`${styles.toast} ${STYLES_BY_VARIANT[variant]}`}>
+    <div className={`${styles.toast} ${styles[variant]}`}>
       <div className={styles.iconContainer}>
         <Icon size={24} />
       </div>
